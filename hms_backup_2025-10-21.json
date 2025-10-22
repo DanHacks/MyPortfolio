@@ -1,0 +1,128 @@
+{
+  "timestamp": "2025-10-21T15:11:39.750Z",
+  "version": "1.0",
+  "data": {
+    "users": [
+      {
+        "id": 1,
+        "name": "System Admin",
+        "email": "admin@hospital.com",
+        "role": "admin",
+        "department_id": null,
+        "phone": "+1234567899",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-18T10:30:00.000Z"
+      },
+      {
+        "id": 2,
+        "name": "Dr. Jane Smith",
+        "email": "dr.jane@hospital.com",
+        "role": "doctor",
+        "department_id": 1,
+        "phone": "+1234567892",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-17T14:20:00.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Nurse Mary Johnson",
+        "email": "nurse.mary@hospital.com",
+        "role": "nurse",
+        "department_id": 2,
+        "phone": "+1234567893",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-18T09:15:00.000Z"
+      },
+      {
+        "id": 4,
+        "name": "Dr. Michael Johnson",
+        "email": "dr.michael@hospital.com",
+        "role": "doctor",
+        "department_id": 2,
+        "phone": "+1234567894",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-16T11:45:00.000Z"
+      },
+      {
+        "id": 5,
+        "name": "Pharmacist Tom Wilson",
+        "email": "pharm.tom@hospital.com",
+        "role": "pharmacist",
+        "department_id": 4,
+        "phone": "+1234567895",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-17T16:30:00.000Z"
+      },
+      {
+        "id": 6,
+        "name": "Lab Tech Sarah Davis",
+        "email": "lab.sarah@hospital.com",
+        "role": "lab_technician",
+        "department_id": 5,
+        "phone": "+1234567896",
+        "status": "active",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "last_login": "2025-01-18T08:00:00.000Z"
+      }
+    ],
+    "departments": [
+      {
+        "id": 1,
+        "name": "Cardiology",
+        "description": "Heart and cardiovascular diseases"
+      },
+      {
+        "id": 2,
+        "name": "Pediatrics",
+        "description": "Child healthcare"
+      },
+      {
+        "id": 3,
+        "name": "Surgery",
+        "description": "Surgical procedures"
+      },
+      {
+        "id": 4,
+        "name": "Pharmacy",
+        "description": "Medication and drugs"
+      },
+      {
+        "id": 5,
+        "name": "Radiology",
+        "description": "Imaging and X-rays"
+      }
+    ],
+    "patients": [],
+    "doctors": [
+      {
+        "id": 1,
+        "name": "Dr. Jane Smith",
+        "specialization": "Cardiology",
+        "available": true,
+        "phone": "+1234567892",
+        "email": "dr.jane@example.com",
+        "department": "Cardiology"
+      },
+      {
+        "id": 2,
+        "name": "Dr. Michael Johnson",
+        "specialization": "Pediatrics",
+        "available": true,
+        "phone": "+1234567893",
+        "email": "dr.michael@example.com",
+        "department": "Pediatrics"
+      }
+    ],
+    "appointments": [],
+    "pharmacy": [],
+    "sales": [],
+    "bills": [],
+    "wards": [],
+    "laboratory": []
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hydan Cheruyot</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51CK+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<a href="home.html" class="logo">Hydan Cheruyot</a>
+			<ul class="nav-links">
+				<li><a href="home.html" id="nav-home">Home</a></li>
+				<li><a href="skills.html" id="nav-skills">Skills</a></li>
+				<li><a href="projects.html" id="nav-projects">Projects</a></li>
+				<li><a href="contacts.html" id="nav-contacts">Contact</a></li>
+			</ul>
+		</nav>
+		<section id="home" class="hero">
+			<div class="hero-content">
+				<h1>Full-Stack Developer</h1>
+				<p>Building digital experiences that merge creativity with technology</p>
+				<p class="highligth">Specializing in modern web development and cyber systems</p>
+				<a href="contacts.html" class="cta-button">Let's Connect</a>
+			</div>
+			<div class="hero-image">
+				<img src="profile.png" alt="profile" class="profile-img">
+			</div>
+			<div class="mini-console" aria-live="polite" aria-atomic="true">
+				<div class="console-header">
+					<span class="console-dot"></span>
+					<span class="console-dot"></span>
+					<span class="console-dot"></span>
+					<span class="console-title">Get To Know Me.</span>
+				</div>
+				<pre class="console-body"><code id="console-output"></code><span class="console-cursor" aria-hidden="true">▌</span></pre>
+			</div>
+		</section>
+		<footer class="footer">
+			<p>
+				© 2025 Hydan Cheruyot |
+				Developer: <a href="https://github.com/DanHacks">DanHacks</a> |
+				GitHub: <a href="https://github.com/DanHacks">github.com/DanHacks</a> |
+				LinkedIn: <a href="https://linkedin.com/in/hydan-cheruyot-8a6132231">Hydan Cheruyot</a>
+			</p>
+		</footer>
+	</body>
+	<script>
+		const currentPage = window.location.pathname.split('/').pop();
+		const navLinks = document.querySelectorAll('.nav-links a');
+		navLinks.forEach(link => {
+			if (link.getAttribute('href') === currentPage) {
+				link.classList.add('active');
+			}
+		});
+	</script>
+	<script src="script.js"></script>
+</html>

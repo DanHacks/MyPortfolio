@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - Hydan Cheruyot</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff66;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #001100;
+      border-bottom: 1px solid #00ff66;
+      box-shadow: 0 0 10px #00ff66;
+      padding: 0.8rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      color: #00ff66;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-shadow: 0 0 8px #00ff66;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #00ff66;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: orange;
+      text-shadow: 0 0 8px orange;
+    }
+
+    .nav-links a.active {
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
+      font-weight: bold;
+    }
+
+    .content {
+      padding-top: 100px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .terminal-header {
+      font-weight: bold;
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .terminal-header .cursor {
+      display: inline-block;
+      margin-left: 5px;
+      color: #00ff66;
+      animation: blink 1s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+  
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .project-item {
+      background: #001100;
+      padding: 1rem;
+      border: 1px solid #00ff66;
+      border-radius: 6px;
+      box-shadow: 0 0 12px #00ff66;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .project-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #00ff66;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-description {
+      margin-bottom: 0.4rem;
+      color: #00ff99;
+    }
+
+    .project-tech {
+      font-style: italic;
+      color: #00cc44;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-link a {
+      color: orange;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .project-link a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px orange;
+    }
+
+    
+    footer {
+      background: #000;
+      color: #00ff66;
+      border-top: 1px solid #00ff66;
+      box-shadow: 0 0 10px #00ff66;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #00ff66;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: orange;
+      text-shadow: 0 0 8px orange;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="home.html" class="logo">Hydan Cheruyot</a>
+    <ul class="nav-links">
+      <li><a href="home.html" id="nav-home">Home</a></li>
+      <li><a href="skills.html" id="nav-skills">Skills</a></li>
+      <li><a href="projects.html" id="nav-projects">Projects</a></li>
+      <li><a href="contacts.html" id="nav-contacts">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="terminal-header">
+      > ls projects/ <span class="cursor">▌</span>
+    </div>
+
+    <ul class="project-list" id="project-list"></ul>
+  </div>
+
+  <footer class="footer">
+    <p>
+      © 2025 Hydan Cheruyot |
+      Developer: <a href="https://github.com/DanHacks">DanHacks</a> |
+      GitHub: <a href="https://github.com/DanHacks">github.com/DanHacks</a> |
+      LinkedIn: <a href="https://linkedin.com/in/hydan-cheruyot-8a6132231">Hydan Cheruyot</a>
+    </p>
+  </footer>
+
+  <script>
+    // My Projects Data
+    const projects = [
+      { title: "VinLex Photography", description: "React & Node.js photo portfolio", tech: "React, Node.js", link: "https://github.com/DanHacks/vinlex-photography" },
+      { title: "NFS 2D Racing", description: "Python (Pygame) racing game", tech: "Python, Pygame", link: "https://github.com/DanHacks/nfs-2d-racing" },
+      { title: "FalconWealth", description: "Investment platform using React + Flask", tech: "React, Flask", link: "https://github.com/DanHacks/falconwealth" },
+      { title: "SwiftMart", description: "Modern trading dashboard", tech: "React, Redux", link: "https://github.com/DanHacks/swiftmart" },
+      { title: "CyberGuard", description: "Real-time cybersecurity monitoring tool", tech: "Python, Django, WebSockets", link: "https://github.com/DanHacks/cyberguard" },
+      { title: "PixelPainter", description: "Collaborative pixel art web app", tech: "Vue.js, Firebase", link: "https://github.com/DanHacks/pixelpainter" },
+      { title: "DataViz Pro", description: "Interactive data visualization dashboard", tech: "D3.js, React", link: "https://github.com/DanHacks/dataviz-pro" },
+      { title: "GameBot AI", description: "AI bot for strategy games", tech: "Python, TensorFlow", link: "https://github.com/DanHacks/gamebot-ai" },
+      { title: "Streamline", description: "Live streaming platform with chat", tech: "Node.js, Socket.io", link: "https://github.com/DanHacks/streamline" },
+      { title: "CodeCraft", description: "Collaborative coding platform", tech: "React, Node.js, WebRTC", link: "https://github.com/DanHacks/codecraft" },
+      { title: "AI Chatbot", description: "Conversational AI chatbot", tech: "Python, NLP, Flask", link: "https://github.com/DanHacks/ai-chatbot" },
+      { title: "TaskMaster", description: "Task management app with reminders", tech: "Vue.js, Firebase", link: "https://github.com/DanHacks/taskmaster" }
+    ];
+
+    const projectList = document.getElementById("project-list");
+
+    function createProjectItem(project) {
+      const li = document.createElement("li");
+      li.className = "project-item";
+      li.innerHTML = `
+        <div class="project-title">${project.title}</div>
+        <div class="project-description">${project.description}</div>
+        <div class="project-tech">Tech: ${project.tech}</div>
+        <div class="project-link"><a href="${project.link}" target="_blank">View Project</a></div>
+      `;
+      return li;
+    }
+
+    function revealProjects() {
+      projects.forEach((project, index) => {
+        const item = createProjectItem(project);
+        projectList.appendChild(item);
+        setTimeout(() => item.classList.add("visible"), index * 200);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      revealProjects();
+      const currentPage = window.location.pathname.split('/').pop();
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
